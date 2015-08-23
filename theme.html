@@ -51,19 +51,11 @@
     {% endif %}
   </head>
   <body>
-
-    {% if is_login %}
-
-      {{ login_form }}
-
-    {% else  %}
-
     <div class="row">
       <div class="span4 header">
         <div class="bg-img" style="background-image: url('{% if site.cover_photo %}{{ site.cover_photo }}{% else %}{{ assets('images/background.jpg') }}{% endif %}');"></div>
         <div class="gradient"></div>
         <div class="title">
-          <h1>{{ site.name }}</h1>
           <ul class="social">
             {% if site.twitter %}
             <li>
@@ -109,6 +101,8 @@
           <img class="avatar" src="{{ site.avatar }}" alt="{{ site.author }}" width="100%" height="100%" />
         </a>
         <div class="site-description">
+          <h1>{{ site.name }}</h1>
+          <p>{{ site.description }}</p>
           <ul>
           <!--<li><a href="/">Blog</a></li>-->
           {% if pages %}
@@ -249,8 +243,6 @@
     {% endif %}
 
     </div>
-
-    {% endif %}
 
     {{ footer_meta }}
 
